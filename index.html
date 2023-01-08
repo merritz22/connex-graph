@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{margin: 0;}
+        span{
+            width: max-content;
+            height: max-content;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        div{
+            display: block;
+        }
+        input{
+            width: fit-content;
+        }
+        *{margin-left: 5px;}
+        .visual{
+            width: 800px;
+            height: 600px;
+            border: 2px solid black;
+        }
+    </style>
+    <title>Convex Graph</title>
+</head>
+<body>
+
+    <span class="princ">
+        <div class="Editor" >
+            <h1>Tableau de bord</h1>
+            <span style="display: flex;margin-bottom: 10px;">
+                <label for="ajouterSommet">ajouter un sommet ? </label>
+                <input id="ajouterSommet" type="number" placeholder="noeud">
+                <button class="ajouterSommet">Valider</button>
+            </span>
+            <span style="display: flex;margin-bottom: 10px;">
+                <label for="arcDept">ajouter un Arc ? </label>
+                <input id="arcDept" type="number" placeholder="noeud de depart">
+                <input id="arcArr" type="number" placeholder="noeud d'arrive">
+                <button class="arcDept">Valider</button>
+            </span>
+            <!-- <span style="display: flex;margin-bottom: 10px;">
+                <label for="deleteSommet">suprimer un sommet ? </label>
+                <input id="deleteSommet" type="number" placeholder="noeud">
+                <button class="deleteSommet">Valider</button>
+            </span> -->
+            <span style="display: flex;margin-bottom: 10px;">
+                <label>Determiner les elements connexes ? </label>
+                <button class="showConnex">Valider</button>
+            </span>
+            <div>
+                <h1>Composants connexes :</h1>
+                <label >Les donnees ci-dessous representent les sous graphes connexes de ce Graphe <br>
+                    notons cependant que nous ne represtons que les noeuds qui sont connexes.
+                </label>
+                <div class="sousgraphe"></div>
+            </div>
+        </div>
+        <div id="visual" class="visual"></div>
+    </span>
+
+
+
+    <script src="./src/dist/Graphe.js"></script>
+    <script src="./lib/cytoscape.min.js"></script>
+    <script src="./src/index.js"></script>
+</body>
+</html>
